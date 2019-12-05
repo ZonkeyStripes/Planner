@@ -4,6 +4,18 @@ body {
   line-height: 1;
 }
 
+.container {
+  border-left: 1px dashed #000000;
+}
+
+.calendar {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
 textarea{
   background: transparent;
   border: none;

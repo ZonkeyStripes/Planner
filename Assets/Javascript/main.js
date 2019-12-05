@@ -38,7 +38,7 @@ function date_time ()
         document.getElementById("displayTime").innerHTML = result;
         setTimeout(function () {
             date_time()
-        }, 500);
+        }, 1000);
         return true;
 }
 date_time();
