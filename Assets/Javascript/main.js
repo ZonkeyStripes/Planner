@@ -1,12 +1,4 @@
 
-$(".saveBtn").on("click", function () {
-        let hour = $(this).parent().attr("id")
-        let text = $(this).siblings(".form-control").val();
-        let dataHour = $(this).data('hour')
-        console.log(dataHour)
-        localStorage.setItem('hour' + dataHour, text);
-})
-
 function makeList() {
         let counter = 12;
         let meridiem = "PM"
@@ -30,9 +22,9 @@ function makeList() {
                 let date = new Date();
                 let time = date.getHours();
                 console.log(time)
-
-
-
+                
+                
+                
                 if (i < time) {
                         div1.addClass("past");
                 } else if (i == time) {
@@ -41,12 +33,12 @@ function makeList() {
                         div1.addClass("future");
                 }
 
-
+                
                 save.append(icon)
                 div.append(div1)
                 div.append(textArea)
                 div.append(save)
-
+                
                 $("#listorsomething").append(div)
         }
 }
@@ -62,6 +54,14 @@ for (let i = 0; i < 24; i++) {
                 $("#" + dataHour).val(text);
         }
 }
+
+$(".saveBtn").on("click", function () {
+        // let hour = $(this).parent().attr("id")
+        let text = $(this).siblings(".form-control").val();
+        let dataHour = $(this).data('hour')
+        console.log(text)
+        localStorage.setItem('hour' + dataHour, text);
+})
 
 function date_time() {
         date = new Date;
@@ -92,52 +92,3 @@ function date_time() {
 }
 
 date_time();
-
-// let date = new Date();
-// let time = date.getHours();      
-// console.log(time)
-// function classChanger(relativeTime) {
-
-//         if (relativeTime < time) {
-//             $("div").addClass("past");
-//         } else if (relativeTime == time) {
-//             $("div").addClass("present");
-//         } else {
-//             $("div").addClass("future");
-//         }
-// }
-// classChanger(); // 5 for example
-// console.log(classChanger(relativeTime))
-
-
-
-
-
-// function classChanger() {
-
-//         for (let i = 0; i > 24; i++) {
-//                 if(i > date_time.getHours) {
-//                         $("<div>").addClass("future")
-//                 }if(i < date_time.getHours) {
-//                         $("<div>").addClass("past")
-//                 }if(i = date_time.getHours) {
-//                         $("<div>").addClass("present")
-//                 }
-//         }
-// }
-
-// classChanger();
-// something for the time
-//When t > current hour : future background
-//  When t < current hour : pastbackground
-// when t = current hour : present background
-// for (let i = 0; i > 24; i++) {
-//         let t = data.getHours();
-//         if(i > t) {
-//                 $("<div>").addClass(".future")
-//         } else if (i < t) {
-//                 $("<div>").addClass(".past")
-//         } else (i = t) {
-//                 $("<div>").addClass(".present")
-//         }
-// }
